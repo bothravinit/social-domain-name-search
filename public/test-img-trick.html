@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image trick test</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #fff; padding: 2rem; }
+    .result { margin: 0.5rem 0; padding: 0.5rem 1rem; border-radius: 6px; }
+    .checking { background: #333; color: #888; }
+    .onload  { background: #14532d; color: #86efac; }
+    .onerror { background: #450a0a; color: #fca5a5; }
+  </style>
+</head>
+<body>
+  <h2>img onload/onerror test</h2>
+  <p style="color:#888">Tests whether the &lt;img&gt; trick can distinguish existing vs non-existing profiles</p>
+  <div id="results"></div>
+
+  <script>
+    const tests = [
+      // Instagram
+      { label: "Instagram — EXISTS    (instagram/instagram)", url: "https://www.instagram.com/instagram/" },
+      { label: "Instagram — NOT EXIST (instagram/findingvyom)", url: "https://www.instagram.com/findingvyom/" },
+      // Facebook
+      { label: "Facebook  — EXISTS    (facebook/zuckerberg)", url: "https://www.facebook.com/zuckerberg" },
+      { label: "Facebook  — NOT EXIST (facebook/findingvyom)", url: "https://www.facebook.com/findingvyom" },
+      // X
+      { label: "X         — EXISTS    (x.com/elonmusk)", url: "https://x.com/elonmusk" },
+      { label: "X         — NOT EXIST (x.com/findingvyom)", url: "https://x.com/findingvyom" },
+      // TikTok
+      { label: "TikTok    — EXISTS    (tiktok/@tiktok)", url: "https://www.tiktok.com/@tiktok" },
+      { label: "TikTok    — NOT EXIST (tiktok/@findingvyom)", url: "https://www.tiktok.com/@findingvyom" },
+    ];
+
+    const container = document.getElementById("results");
+
+    tests.forEach(({ label, url }) => {
+      const div = document.createElement("div");
+      div.className = "result checking";
+      div.textContent = `⏳ ${label}`;
+      container.appendChild(div);
+
+      const img = new Image();
+      const start = Date.now();
+
+      img.onload = () => {
+        div.className = "result onload";
+        div.textContent = `✅ onload  — ${label}  (${Date.now()-start}ms)`;
+      };
+      img.onerror = () => {
+        div.className = "result onerror";
+        div.textContent = `❌ onerror — ${label}  (${Date.now()-start}ms)`;
+      };
+
+      img.src = url + (url.includes("?") ? "&" : "?") + "nocache=" + Date.now();
+    });
+  </script>
+</body>
+</html>
