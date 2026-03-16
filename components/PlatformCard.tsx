@@ -25,6 +25,7 @@ export default function PlatformCard({ platform, status, username, index }: Prop
 
   return (
     <div
+      data-testid={`card-${platform.id}`}
       className={`rounded-2xl border p-5 transition-all duration-300 animate-fade-slide-up ${cardStyle}`}
       style={{ animationDelay, animationFillMode: "both", opacity: 0 }}
     >
