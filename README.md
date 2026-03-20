@@ -1,4 +1,4 @@
-# namecheck
+# social handle check
 
 **Check your username across 9 major social platforms — instantly.**
 
@@ -8,7 +8,7 @@
 
 ## What it does
 
-namecheck lets you type a username once and simultaneously checks its availability across 9 platforms in real time. Cards update as each result comes in — no waiting for all platforms to finish before you see anything.
+social handle check lets you type a username once and simultaneously checks its availability across 9 platforms in real time. Cards update as each result comes in — no waiting for all platforms to finish before you see anything.
 
 Useful when you're starting a brand, project, or personal profile and want consistent handles everywhere.
 

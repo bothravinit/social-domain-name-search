@@ -43,7 +43,7 @@ async function cardStatus(
 
 // --- tests ---
 
-test.describe("namecheck — social channel integration", () => {
+test.describe("social handle check — social channel integration", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });

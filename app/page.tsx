@@ -78,7 +78,7 @@ export default function Home() {
                 <path strokeLinecap="round" d="m21 21-4.35-4.35" />
               </svg>
             </div>
-            <span className="font-semibold text-sm tracking-tight">namecheck</span>
+            <span className="font-semibold text-sm tracking-tight">social handle check</span>
           </div>
           <span className="text-xs text-white/25 hidden sm:block">
             9 platforms · instant results
@@ -90,7 +90,7 @@ export default function Home() {
       <div className="relative z-10 max-w-2xl mx-auto px-6 pt-20 pb-14 text-center">
         <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white/40 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          Check across Instagram, TikTok, X &amp; more
+          find your social handle seamlessly
         </div>
 
         <h1 className="text-4xl md:text-[52px] font-bold tracking-[-0.03em] leading-tight mb-4">
